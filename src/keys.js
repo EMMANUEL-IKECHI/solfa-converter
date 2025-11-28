@@ -1,0 +1,67 @@
+const keys = {
+  C: {
+    do: "C",
+    re: "D",
+    mi: "E",
+    fa: "F",
+    so: "G",
+    la: "A",
+    ti: "B",
+  },
+  D: {
+    do: "D",
+    re: "E",
+    mi: "F",
+    fa: "G",
+    so: "A",
+    la: "B",
+    ti: "C",
+  },
+  E: {
+    do: "E",
+    re: "F",
+    mi: "G",
+    fa: "A",
+    so: "B",
+    la: "C",
+    ti: "D",
+  },
+  F: {
+    do: "F",
+    re: "G",
+    mi: "A",
+    fa: "B",
+    so: "C",
+    la: "D",
+    ti: "E",
+  },
+  G: {
+    do: "G",
+    re: "A",
+    mi: "B",
+    fa: "C",
+    so: "D",
+    la: "E",
+    ti: "F",
+  },
+  A: {
+    do: "A",
+    re: "B",
+    mi: "C",
+    fa: "D",
+    so: "E",
+    la: "F",
+    ti: "G",
+  },
+    B: {
+    do: "B",
+    re: "C",
+    mi: "D",
+    fa: "E",
+    so: "F",
+    la: "G",
+    ti: "A",
+  }
+};
+
+export default keys;
