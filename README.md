@@ -1,16 +1,45 @@
-# React + Vite
+Solfa-to-Note Converter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Solfa-to-Note Converter is a React-based web application that allows users to convert solfège syllables (do, re, mi, fa, so, la, ti) into their corresponding musical notes across all 12 major keys. The app is designed to help musicians, students, and music enthusiasts quickly transpose melodies or practice sight-singing with accurate note representations.
 
-Currently, two official plugins are available:
+Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Dynamic Key Selection – Choose any major key (C, C#, D, Eb, E, F, F#, G, Ab, A, Bb, B) to automatically map solfège to the correct notes.
 
-## React Compiler
+Real-Time Conversion – Enter a sequence of solfège syllables and instantly see the corresponding notes.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Responsive UI – Built with Tailwind CSS for a clean and responsive design, works well on mobile and desktop.
 
-## Expanding the ESLint configuration
+State Management with useReducer – Efficient handling of notes and key selection for scalable functionality.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Modular and Extensible – Easily extendable to support additional features like minor scales, chord mapping, or sharps/flats notation.
+
+How it Works
+
+The user selects a major key from the dropdown menu.
+
+The user enters a sequence of solfège syllables.
+
+The app dynamically maps each syllable to the corresponding note based on the selected key.
+
+The converted notes are displayed immediately for reference or further use.
+
+Technologies Used
+
+React – For building interactive user interfaces.
+
+Tailwind CSS v4 – For styling and responsive layout.
+
+useReducer – For scalable state management of notes and selected key.
+
+Vite – For fast development and build tooling.
+
+Future Enhancements
+
+Support for minor keys and modes.
+
+Enhanced musical notation with correct accidentals for all keys.
+
+Export converted sequences as MIDI or sheet music.
+
+Integrate audio playback for entered solfège sequences.
