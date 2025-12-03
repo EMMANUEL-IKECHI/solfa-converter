@@ -20,7 +20,7 @@ const InputNotesForm = ({ addNotes, chooseKey, currentKey }) => {
         id=""
         // cols="30"
         // rows="1"
-        placeholder={`do re mi`}
+        placeholder={`ti, do re mi fa so la ti do'`}
         className="p-6 border"
         value={input.value}
         onChange={input.handleChange}
@@ -30,7 +30,7 @@ const InputNotesForm = ({ addNotes, chooseKey, currentKey }) => {
         id=""
         // cols="30"
         // rows="4"
-        placeholder={`do re mi fa so la ti do \nre mi fa`}
+        placeholder={`ti, do re mi fa so la ti do'`}
         className="p-6 border border-dashed  rounded-md"
         value={input.value} 
         onChange={input.handleChange}
