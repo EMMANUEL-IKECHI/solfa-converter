@@ -10,43 +10,38 @@ const InputNotesForm = ({ addNotes, chooseKey, currentKey }) => {
     addNotes(input.value);
   };
 
-  const viewportWidth = window.visualViewport.width;
-
   return (
-    <form action="" onSubmit={handleSubmit} className="grid md:max-w-7/12 w-full gap-5">
-      {viewportWidth < 330 ? 
-      <input
-        name=""
-        id=""
-        // cols="30"
-        // rows="1"
-        placeholder={`ti, do re mi fa so la ti do'`}
-        className="p-6 border"
-        value={input.value}
-        onChange={input.handleChange}
-      />
-      : <input
-        name=""
-        id=""
-        // cols="30"
-        // rows="4"
-        placeholder={`ti, do re mi fa so la ti do'`}
-        className="p-6 border border-dashed  rounded-md"
-        value={input.value} 
-        onChange={input.handleChange}
-      />}
-      
+    <form
+  onSubmit={handleSubmit}
+  className="grid w-full max-w-lg gap-5"
+>
+  <input
+    placeholder="ti, do re mi fa so la ti do'"
+    className="
+      p-4 border border-dashed rounded-md
+      w-full
+    "
+    value={input.value}
+    onChange={input.handleChange}
+  />
 
-      <SelectKey chooseKey={chooseKey} currentKey={currentKey} />
+  <SelectKey chooseKey={chooseKey} currentKey={currentKey} />
 
-      <input
-        type="submit"
-        value="Convert"
-        className="bg-blue-400 p-2 rounded-lg text-white"
-      />
+  <input
+    type="submit"
+    value="Convert"
+    className="bg-blue-500 p-2 rounded-lg text-white"
+  />
 
-      <button onClick={input.reset} className="border border-blue-400 p-2 rounded-md text-blue-500" >Reset</button>
-    </form>
+  <button
+    type="button"
+    onClick={input.reset}
+    className="border border-blue-400 p-2 rounded-md text-blue-500"
+  >
+    Reset
+  </button>
+</form>
+
   );
 };
 

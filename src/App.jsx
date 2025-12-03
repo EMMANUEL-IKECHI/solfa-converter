@@ -43,16 +43,20 @@ function App() {
   }
 
   return (
-    <div className=" min-h-screen max-sm:px-10 px-20 bg-sky-50">
+    <div className="min-h-screen flex flex-col bg-sky-50">
       <NavBar />
-      <div className="flex max-md:flex-col gap-10">
-        <InputNotesForm
-          addNotes={addNotes}
-          chooseKey={chooseKey}
-          currentKey={state.targetKey}
-        />
-        <DisplayNotes notes={state.notes} />
-      </div>
+
+      <main className="flex-1 px-5 md:px-20 py-10">
+        <div className="flex max-md:flex-col gap-10">
+          <InputNotesForm
+            addNotes={addNotes}
+            chooseKey={chooseKey}
+            currentKey={state.targetKey}
+          />
+          <DisplayNotes notes={state.notes} />
+        </div>
+      </main>
+
       <Footer />
     </div>
   );

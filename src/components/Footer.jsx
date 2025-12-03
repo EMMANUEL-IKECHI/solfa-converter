@@ -1,11 +1,11 @@
-import React from 'react'
+import React from "react";
 
 const Footer = () => {
   return (
-    <div className='absolute bottom-10 text-gray-500'>
-        Legend: do re mi fa so la ti do':high do so, = low so
-    </div>
-  )
-}
+    <footer className="py-6 text-center text-gray-500 text-sm">
+      Legend: do re mi fa so la ti do' = high do, so = low so
+    </footer>
+  );
+};
 
-export default Footer
+export default Footer;
