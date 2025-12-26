@@ -5,6 +5,7 @@ import DisplayNotes from "./components/DisplayNotes";
 import { useReducer } from "react";
 import Footer from "./components/Footer";
 import { convertToNotes } from "./converter";
+import { sanitizeInput } from "../sanitizeInput";
 
 const ACTIONS = {
   ADD_NOTES: "add-notes",
@@ -14,9 +15,9 @@ const ACTIONS = {
 const reducer = (state, action) => {
   switch (action.type) {
     case ACTIONS.ADD_NOTES: {
-      if (!state.targetKey) return state;
-      const splitString = action.payload.trim().split(" ");
-      const mappedArray = splitString.map(
+      if (!state.targetKey) return {notes: "You need to select a key"};
+      const tokens = sanitizeInput(action.payload);
+      const mappedArray = tokens.map(
         (solfa) => convertToNotes(solfa, state.targetKey) || solfa
       );
       return { ...state, notes: mappedArray.join(" ") };
@@ -32,7 +33,7 @@ const reducer = (state, action) => {
 };
 
 function App() {
-  const [state, dispatch] = useReducer(reducer, { notes: "", targetKey: "" });
+  const [state, dispatch] = useReducer(reducer, { notes: "", targetKey: "C" });
 
   function addNotes(string) {
     dispatch({ type: ACTIONS.ADD_NOTES, payload: string });
