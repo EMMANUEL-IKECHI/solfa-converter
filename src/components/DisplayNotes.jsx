@@ -60,7 +60,7 @@ const DisplayNotes = ({ notes }) => {
 
       <footer className="rounded-2xl bg-linear-to-r from-cyan-50 to-blue-50/70 backdrop-blur-2xl border border-cyan-100 py-5 text-center text-gray-500 text-sm">
         <span className="font-semibold text-cyan-700">Legend:</span> do re mi fa
-        so la ti do' = high do, so = low so
+        so la ti do
       </footer>
     </div>
   );
