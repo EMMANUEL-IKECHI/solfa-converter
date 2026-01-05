@@ -23,10 +23,10 @@ const SelectKey = ({ chooseKey, currentKey }) => {
   }, []);
 
   return (
-    <div className="relative w-60" ref={ref}>
+    <div className="relative w-full" ref={ref}>
       <label
         htmlFor="key-selector"
-        className="text-sm font-medium text-gray-700 block mb-1"
+        className="text-sm font-medium block mb-2 mt-4"
       >
         Select the key
       </label>
@@ -50,9 +50,9 @@ const SelectKey = ({ chooseKey, currentKey }) => {
         onClick={() => setOpen((prev) => !prev)}
         className="
           w-full flex items-center justify-between
-          rounded-xl border border-gray-300 bg-white
-          px-4 py-2 text-sm
-          focus:ring-2 focus:ring-blue-400/40 focus:border-blue-500
+          rounded-xl bg-white
+          px-4 py-3 text-sm font-semibold border-2 border-cyan-200 focus:ring-cyan-400 outline-none
+          focus:border-cyan-400
           transition
         "
       >

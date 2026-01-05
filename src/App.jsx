@@ -3,7 +3,6 @@ import NavBar from "./components/NavBar";
 import InputNotesForm from "./components/InputNotesForm";
 import DisplayNotes from "./components/DisplayNotes";
 import { useReducer } from "react";
-import Footer from "./components/Footer";
 import { convertToNotes } from "./converter";
 import { sanitizeInput } from "../sanitizeInput";
 
@@ -15,7 +14,7 @@ const ACTIONS = {
 const reducer = (state, action) => {
   switch (action.type) {
     case ACTIONS.ADD_NOTES: {
-      if (!state.targetKey) return {notes: "You need to select a key"};
+      if (!state.targetKey) return { notes: "You need to select a key" };
       const tokens = sanitizeInput(action.payload);
       const mappedArray = tokens.map(
         (solfa) => convertToNotes(solfa, state.targetKey) || solfa
@@ -44,11 +43,11 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-sky-50">
+    <div className="min-h-screen flex flex-col bg-linear-to-br from-cyan-100 via-sky-50 to-blue-100">
       <NavBar />
 
-      <main className="flex-1 px-5 md:px-20 py-10">
-        <div className="flex max-md:flex-col gap-10">
+      <main className="flex-1 px-5 md:px-15 ">
+        <div className="flex max-md:flex-col max-md:items-center gap-10 mb-8">
           <InputNotesForm
             addNotes={addNotes}
             chooseKey={chooseKey}
@@ -57,8 +56,6 @@ function App() {
           <DisplayNotes notes={state.notes} />
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }
