@@ -13,13 +13,13 @@ const NavBar = () => {
         </div>
         <p className="mt-2 text-gray-600">Transform solfege syllables into letter notes instantly</p>
       </div>
-        <ul className="flex gap-4 text-sm">
+        <ul className="flex gap-4 text-sm self-start md:self-center">
         <li className="rounded-full bg-white p-2.5 shadow">
           <a className="hover:text-blue-500 text-cyan-600 transition" href="#">
             <Info className="w-5 h-5" />
           </a>
         </li>
-        <li className="rounded-full bg-white p-2.5 shadow">
+        <li className="rounded-full bg-white p-2.5 shadow hidden md:inline-block">
           <a className="hover:text-blue-500  text-cyan-600 transition" href="#">
             <MessageCircleQuestionMark className="w-5 h-5" />
           </a>
