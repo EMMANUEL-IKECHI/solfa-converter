@@ -8,6 +8,17 @@ const solfa_index = {
   ti: 6,
 };
 
+const SOLFEGE_ALIASES = {
+  do: ["do", "doh"],
+  re: ["re", "ray"],
+  mi: ["mi", "mee"],
+  fa: ["fa"],
+  so: ["so", "sol"],
+  la: ["la"],
+  ti: ["ti", "si"],
+};
+
+
 const CHROMATIC = [
   "C",
   "C#",
@@ -39,8 +50,17 @@ const buildMajorScale = (tonic) => {
   return (scale.slice(0, 7));
 };
 
+const SOLFA_LOOKUP = Object.entries(SOLFEGE_ALIASES).flatMap(([canonical, aliases]) => (aliases.map(alias => [alias, canonical]))).reduce((acc, [alias, canonical]) => {
+  acc[alias] = canonical;
+  return acc;
+}, {});
+
 export const convertToNotes = (solfa, key) => {
   const scale = buildMajorScale(key);
-  const index = solfa_index[solfa];
+
+  const canonicalSolfa = SOLFA_LOOKUP[solfa.toLowerCase()];
+  if (!canonicalSolfa) return scale[solfa_index[solfa]];
+
+  const index = solfa_index[canonicalSolfa];
   return scale[index];
 }
